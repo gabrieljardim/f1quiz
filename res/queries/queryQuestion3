@@ -1,0 +1,11 @@
+select distinct ?f1gpLabel ?driverName
+where {
+     ?f1gp a dbo:GrandPrix .
+     ?f1gp rdfs:label ?f1gpLabel .
+     ?f1gp dct:subject ?subject .
+     ?subject skos:broader* dbc:Formula_One_races .
+     ?f1gp dbp:poleDriver ?poleDriver .
+     ?poleDriver foaf:name ?driverName .
+
+      FILTER (langMatches(lang(?f1gpLabel),"en"))
+}

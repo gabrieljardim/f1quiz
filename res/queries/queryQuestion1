@@ -1,0 +1,9 @@
+select distinct ?f1DriverName ?wins
+
+where {
+    ?f1Driver a dbo:FormulaOneRacer .
+    ?f1Driver foaf:name ?f1DriverName .
+    ?f1Driver dbo:wins ?wins
+    FILTER(?wins > 0)
+
+}

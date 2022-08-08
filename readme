@@ -1,0 +1,8 @@
+Para buildar é necessário ter um compilador c++ e cmake instalados. Na raiz do projeto faça(linux e macos):
+
+mkdir build
+cd build
+cmake ..
+cmake --build .
+cp -R ../res .
+./F1Quiz

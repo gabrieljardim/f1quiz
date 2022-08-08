@@ -1,0 +1,8 @@
+select distinct ?f1TeamLabel ?constructorTitle
+where {
+     ?f1Team a dbo:FormulaOneTeam .
+     ?f1Team rdfs:label ?f1TeamLabel .
+     ?f1Team dbp:consChamp ?constructorTitle .
+     FILTER (?constructorTitle > 0)
+     FILTER (langMatches(lang(?f1TeamLabel),"en"))
+}

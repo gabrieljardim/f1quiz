@@ -1,0 +1,8 @@
+select distinct ?f1TeamLabel ?debutYear
+where {
+     ?f1Team a dbo:FormulaOneTeam .
+     ?f1Team rdfs:label ?f1TeamLabel .
+     ?f1Team dbp:debut ?debutYear .
+     FILTER (langMatches(lang(?f1TeamLabel),"en")) 
+     FILTER (?debutYear <= 2022) 
+}
